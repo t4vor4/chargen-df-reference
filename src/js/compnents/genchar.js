@@ -6,9 +6,14 @@ export default class GenChar {
     init() {
         // console.log(Char);
         this.montaHtml(this.montaChar());
-        $(document).on('click','.gp_button', _ => {
-            this.montaHtml(this.montaChar())
-        });
+        // $(document).on('click','.gp_button', _ => {
+        //     this.montaHtml(this.montaChar())
+        // });
+        // [gp-button]
+        document.querySelector('body').addEventListener('click', e => {
+            // console.log(e.target.className)
+            e.target.className === 'gp_button' && this.montaHtml(this.montaChar());
+        })
     }
 
     roll(obj) {

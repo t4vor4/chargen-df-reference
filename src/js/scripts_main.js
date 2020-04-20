@@ -2,7 +2,7 @@
 import $ from "jquery";
 import GenChar from './compnents/genchar';
 
-$(document).ready() {
+$(document).ready(_ => {
     // mount modules here
     const genChar = new GenChar();
-}
+});
