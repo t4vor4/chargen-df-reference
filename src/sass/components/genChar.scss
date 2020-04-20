@@ -1,0 +1,64 @@
+// Colors
+$body-bg: rgb(34, 33, 126);
+$chargen-bg: #ccc;
+$chargen-border: #000;
+$title-color: rgb(233, 235, 118);
+
+// Fonts
+@mixin fontTitle {
+    font-family: 'Luckiest Guy', cursive;    
+}
+@mixin fontText {
+    font-family: 'Roboto', sans-serif;    
+}
+
+body {
+    font-size: 14px;
+    @include fontText;
+    background-color: $body-bg;
+}
+strong {
+    font-weight: 700;
+}
+header {
+    text-align: center;
+    width: 100%;
+    h1 {
+        font-size: 2em;
+        padding: 10px;
+        @include fontTitle;
+        color: $title-color;
+    }
+}
+footer {
+    width: 100%;
+    text-align: center;   
+}
+section {
+    background-color: $chargen-bg;
+    border: 6px solid $chargen-border;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: block;
+    margin: 15px auto;
+    min-height: 400px;
+    padding: 20px;
+    width: 80%;
+    position: relative;
+
+    ul li {
+        font-size: 1.1em;
+        line-height: 1.2em;
+        padding-bottom: .2em;
+    }
+
+    .gp_button {
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - 40px);
+        padding: 20px;
+        font-size: 1.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}

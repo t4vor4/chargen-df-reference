@@ -1,8 +1,7 @@
 // Import modules here
-import $ from "jquery";
-import GenChar from './compnents/genchar';
+import GenChar from './components/genchar';
 
-$(document).ready(_ => {
+window.onload = _ => {
     // mount modules here
     const genChar = new GenChar();
-});
+}

@@ -4,14 +4,8 @@ export default class GenChar {
         this.init();
     }
     init() {
-        // console.log(Char);
         this.montaHtml(this.montaChar());
-        // $(document).on('click','.gp_button', _ => {
-        //     this.montaHtml(this.montaChar())
-        // });
-        // [gp-button]
         document.querySelector('body').addEventListener('click', e => {
-            // console.log(e.target.className)
             e.target.className === 'gp_button' && this.montaHtml(this.montaChar());
         })
     }
@@ -32,9 +26,9 @@ export default class GenChar {
         let $pFisico = _ => {
             let $arr = Char.portefisico1;
             if ($i.nome === 'criança'){
-                $($arr).each( i => {
+                for (const i in $arr) {
                     $arr[i] === "muito alto" && $arr.splice(i,1)
-                } )
+                }
             }
             return $arr;
         }
@@ -62,20 +56,24 @@ export default class GenChar {
         const {genero, idade1, idade2, body1, body2, cabelo1, cabelo2, humor, persona} = obj;
         
         const $html = `
-        <h1>Gerador de personagem</h1>
+        <section>
         <ul>
-            <li gp-genero>Sexo: ${genero};</li>
-            <li gp-idade1>Idade 1: ${idade1};</li>
-            <li gp-idade2>Idade 2: ${idade2};</li>
-            <li gp-portefisico1>Porte Físico 1: ${body1};</li>
-            <li gp-portefisico2>Porte Físico 2: ${body2};</li>
-            <li gp-cabelo1>Cabelo: ${cabelo1};</li>
-            ${!!cabelo2 && `<li gp-cabelo2>Cabelo: ${cabelo2};</li>`}
-            <li gp-humor>Humor: ${humor};</li>
-            <li gp-persona>Persona: ${persona};</li>
+            <li gp-genero><strong>Sexo:</strong> ${genero};</li>
+            <li gp-idade1><strong>Idade 1:</strong> ${idade1};</li>
+            <li gp-idade2><strong>Idade 2:</strong> ${idade2};</li>
+            <li gp-portefisico1><strong>Porte Físico 1:</strong> ${body1};</li>
+            <li gp-portefisico2><strong>Porte Físico 2:</strong> ${body2};</li>
+            <li gp-cabelo1><strong>Cabelo:</strong> ${cabelo1};</li>
+            ${!!cabelo2 ? `<li gp-cabelo2><strong>Cabelo:</strong> ${cabelo2};</li>` : ''}
+            <li gp-humor><strong>Humor:</strong> ${humor};</li>
+            <li gp-persona><strong>Persona:</strong> ${persona}</li>
         </ul>
         <button gp-button class="gp_button">Gerar um novo personagem</button>
-        `
-        $('[chargen]').html($html);
+        </section>
+        `;
+
+        const $header = '<header><h1>Gerador de personagem</h1></header>';
+        const $footer = '<footer>Desenvolvido por <a href="https://github.com/t4vor4" target="_blank">T4vor4</a></footer>'
+        document.querySelector('[chargen]').innerHTML = $header+$html+$footer;
     }
 }
