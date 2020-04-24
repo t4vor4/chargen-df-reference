@@ -1,8 +1,17 @@
 // Colors
-$body-bg: rgb(34, 33, 126);
-$chargen-bg: #ccc;
+$black: #000;
+$orange: #ff8000;
+$yellow: #ffcd0c;
+$white: #fff;
+$purple-1: #241a35;
+$purple-2: #20162f;
+$purple-3: #191321;
+
+$body-bg1: $purple-1;
+$body-bg2: $purple-2;
+$chargen-bg: $purple-3;
 $chargen-border: #000;
-$title-color: rgb(233, 235, 118);
+$title-color: $white;
 
 // Fonts
 @mixin fontTitle {
@@ -15,24 +24,36 @@ $title-color: rgb(233, 235, 118);
 body {
     font-size: 14px;
     @include fontText;
-    background-color: $body-bg;
+    background-color: $body-bg2;
+    background-image: linear-gradient(45deg, $body-bg1 25%, transparent 25%, transparent 75%, $body-bg1 75%, $body-bg1),
+    linear-gradient(45deg, $body-bg1 25%, transparent 25%, transparent 75%, $body-bg1 75%, $body-bg1);
+    background-size: 15px 15px;
+    background-position: 0 0, 7px 7px;
 }
 strong {
     font-weight: 700;
+    color: $orange;
 }
 header {
     text-align: center;
     width: 100%;
+    background-color: $black;
     h1 {
         font-size: 2em;
         padding: 10px;
         @include fontTitle;
         color: $title-color;
     }
+    
+    
 }
 footer {
     width: 100%;
     text-align: center;   
+    color: $white;
+    a {
+        color: $orange;
+    }
 }
 section {
     background-color: $chargen-bg;
@@ -45,11 +66,13 @@ section {
     padding: 20px;
     width: 80%;
     position: relative;
+    max-width: 360px;
 
     ul li {
         font-size: 1.1em;
         line-height: 1.2em;
         padding-bottom: .2em;
+        color: $white;
     }
 
     .gp_button {
@@ -60,5 +83,40 @@ section {
         font-size: 1.1em;
         font-weight: 700;
         text-transform: uppercase;
+        background-color: $purple-1;
+        border: 2px solid $black;
+        color: $orange;
+        box-shadow: -4px 5px 0 #000;
+        margin: -5px 0 0 4px;
+        transition: all .2s;
+        &:hover {
+            box-shadow: -2px 3px 0 #000;
+            margin: -3px 0 0 2px;
+        }
+        &:active {
+            box-shadow: 0 0 0 #000;
+            margin: 0 0 0 0;
+        }
+        &:focus {
+            color: $yellow;
+        }
+        
+    }
+}
+
+@media (min-width: 360px) {
+    header {
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 1050px) {
+    section {
+        min-height: 500px;
+        min-width: 440px;
+        ul li {
+            font-size: 1.4em;
+            padding-bottom: 0.5em;
+        }
     }
 }
