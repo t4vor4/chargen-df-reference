@@ -84,7 +84,7 @@
         "sem emoções"
     ],
     "list_a": [
-        {"b": "um membro da realeza (um rei)", "b": "um membro da realeza (uma rainha)"},
+        {"a": "um membro da realeza (um rei)", "b": "um membro da realeza (uma rainha)"},
         {"a":"um membro da realeza (principe)","b": "um membro da realeza (princesa)"},
         {"a":"um jardineiro","b": "uma jardineira"},
         {"a":"um ladrão","b":"uma ladra"},
@@ -131,7 +131,7 @@
         {"a":"um elemental (gelo)","b":"uma elemental (gelo)",},
         {"a":"um elemental (planta)","b":"uma elemental (planta)"},
         {"a":"um demônio","b":"uma demônia"},
-        {"a":"um palhaço","b":"/uma palhaça"},
+        {"a":"um palhaço","b":"uma palhaça"}
     ],
     "list_b": [
         "que ama aventuras.",
